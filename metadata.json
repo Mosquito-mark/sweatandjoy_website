@@ -1,0 +1,6 @@
+{
+  "name": "Sweat & Joy Fitness - Retro Coaching Lab",
+  "description": "Authentic human-powered virtual fitness coaching, NASM corrective exercise, and custom workout programming with a nostalgic retro early-web lab.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

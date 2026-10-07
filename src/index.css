@@ -1,0 +1,152 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Courier Prime', Courier, monospace;
+    background-color: #c0c0c0;
+    background-image: radial-gradient(#808080 15%, transparent 16%), radial-gradient(#808080 15%, transparent 16%);
+    background-size: 4px 4px;
+    background-position: 0 0, 2px 2px;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* Authentic Retro Windows 98 & 90s Web Styles */
+.font-vt323 {
+  font-family: 'VT323', monospace;
+}
+
+.font-courier {
+  font-family: 'Courier Prime', Courier, monospace;
+}
+
+.pixel-border {
+  border: 3px solid #000000;
+  box-shadow: 4px 4px 0px #000000;
+}
+
+.pixel-border-sm {
+  border: 2px solid #000000;
+  box-shadow: 2px 2px 0px #000000;
+}
+
+.pixel-border-inset {
+  border: 2px solid #000000;
+  box-shadow: inset 2px 2px 0px #808080, inset -2px -2px 0px #ffffff;
+  background: #ffffff;
+}
+
+.win98-box {
+  background-color: #c0c0c0;
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #000000;
+  border-bottom: 2px solid #000000;
+  box-shadow: inset -1px -1px 0px #808080, inset 1px 1px 0px #dfdfdf;
+}
+
+.win98-sunken {
+  background-color: #ffffff;
+  border-top: 2px solid #808080;
+  border-left: 2px solid #808080;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  box-shadow: inset 1px 1px 0px #000000;
+}
+
+.pixel-btn {
+  border: 2px solid #000000;
+  box-shadow: 3px 3px 0px #000000;
+  background: #ffff55;
+  transition: transform 0.05s ease, box-shadow 0.05s ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+.pixel-btn:hover {
+  filter: brightness(1.05);
+}
+
+.pixel-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #000000;
+}
+
+.win98-btn {
+  background: #c0c0c0;
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #000000;
+  border-bottom: 2px solid #000000;
+  box-shadow: inset 1px 1px 0px #dfdfdf, inset -1px -1px 0px #808080;
+  cursor: pointer;
+  user-select: none;
+}
+
+.win98-btn:active {
+  border-top: 2px solid #000000;
+  border-left: 2px solid #000000;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  box-shadow: inset 1px 1px 0px #808080;
+  padding-top: calc(theme(spacing.1) + 1px);
+  padding-left: calc(theme(spacing.2) + 1px);
+}
+
+.window-header {
+  background: linear-gradient(90deg, #000080, #1084d0);
+  color: #ffffff;
+  font-family: 'VT323', monospace;
+  letter-spacing: 1px;
+}
+
+.window-header-inactive {
+  background: linear-gradient(90deg, #808080, #b5b5b5);
+  color: #d4d4d4;
+  font-family: 'VT323', monospace;
+  letter-spacing: 1px;
+}
+
+/* CRT Scanline Filter effect */
+.crt-overlay {
+  position: relative;
+}
+
+.crt-overlay::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+  z-index: 40;
+  background-size: 100% 3px, 6px 100%;
+  pointer-events: none;
+}
+
+/* Marquee animation */
+@keyframes marquee-scroll {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: marquee-scroll 24s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Retro Blink */
+@keyframes retro-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.retro-blink {
+  animation: retro-blink 1s infinite;
+}
